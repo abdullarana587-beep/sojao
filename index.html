@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ayeza ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Great Vibes', cursive;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffc3e6);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+
+  @keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    animation: fadeIn 2s forwards;
+    opacity: 0;
+  }
+
+  h1 {
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+  }
+
+  button {
+    font-family: 'Great Vibes', cursive;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .yes { background: #ff6b81; color: white; }
+  .no { background: #fbc2eb; color: #fff; }
+  .yes:hover, .no:hover { transform: scale(1.1); }
+
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* Hearts */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4b6e;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+    animation: float 6s linear infinite;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4b6e;
+    border-radius: 50%;
+  }
+  .heart::before { top: -10px; left: 0; }
+  .heart::after { left: 10px; top: 0; }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(-45deg); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
+  }
+
+  /* Full-screen romantic message */
+  .romanceOverlay {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    flex-direction: column;
+    font-size: 1.5em;
+    line-height: 2em;
+    overflow-y: auto;
+    opacity:0;
+    animation: fadeIn 2s forwards;
+  }
+
+  .romanceOverlay h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffb6c1;
+  }
+
+  .romanceOverlay p {
+    margin: 10px 0;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 2em; }
+    .romanceOverlay { font-size: 1.2em; padding: 20px; }
+    .romanceOverlay h2 { font-size: 2em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Ayeza… will you be my Valentine? 💘🥺</h1>
+  <button class="yes" onclick="showRomance()">Yes 💕</button>
+  <button class="no" onclick="sayNo()">No 😢</button>
+</div>
+
+<div id="heartsContainer"></div>
+
+<script>
+  const heartsContainer = document.getElementById('heartsContainer');
+
+  // Floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 300);
+
+  // No button playful logic
+  function sayNo() {
+    const messages = [
+      "Ayeza… ab tum pyar nahi karti na mery se? 😢\nChalo… dubado Yes 💕",
+      "Arre Ayeza… dil to mera tut raha hai 😔\nBas ek baar Yes bol do… 💖",
+      "Meri feelings itni sachhi hai 💌… bas tumse Yes chahiye 😭💕",
+      "Chalo na… ab tumhari koi choice nahi 😏💖 Yes karo!"
+    ];
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    alert(msg);
+  }
+
+  // Show full romantic message on Yes
+  function showRomance() {
+    const overlay = document.createElement('div');
+    overlay.classList.add('romanceOverlay');
+    overlay.innerHTML = `
+      <h2>I LOVE YOU SO MUCH 💖</h2>
+      <p>Ayeza, tum meri zindagi ka sabse khoobsurat hissa ho. Har pal jo tumhare saath guzarta hai, woh mere liye ek sapna jaisa hai. Tumhari muskaan, tumhari baatein, aur tumhari aankhen… sab kuch mujhe itna pyaar dene wali hai ki main bas tumhe chahna nahi chhod sakta.</p>
+      <p>Jab kabhi door hotay hain, dil thoda dard feel karta hai, par yeh dard bhi ek pyar ka proof hai jo humare beech hai. Tum meri duniya ho, aur tumhare bina sab kuch adhoora lagta hai.</p>
+      <p>Yaad hai wo lines jo Salar ne Imama ko credit ki thi? Main bas yeh tumhare liye bolta hoon: “Tum meri zindagi ki sabse haseen wajah ho, aur main hamesha tumhare saath rehna chahta hoon.” 💕</p>
+      <p>Har din tumhe chahna, tumhari tarif karna, aur tumhare saath sapne dekhna mere liye sabse khoobsurat feeling hai. Tum meri duniya ho, Ayeza… aur main hamesha tumhe pyar karunga. ❤️</p>
+      <p>Bas yeh hi dua hai ke humesha hum dono ek saath muskurate rahe aur yeh pyar kabhi kam na ho. Tum meri zindagi ka sabse pyaara hissa ho, aur main tumhe hamesha cherish karunga. 💖</p>
+    `;
+    document.body.appendChild(overlay);
+  }
+</script>
+</body>
+</html>
